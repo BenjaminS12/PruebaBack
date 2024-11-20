@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login
 from django.http import HttpResponse
 
+
+def index(request):
+    return render(request, 'index.html')
+
 def signup(request):
     
     if request.method == 'GET':
