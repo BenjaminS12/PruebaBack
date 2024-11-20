@@ -26,3 +26,6 @@ def signup(request):
                      'form': UserCreationForm,
                      "error":'Las contraseñas no coinciden'
                  })
+        
+def signin(request):
+    return render(request, 'registro/signin.html')
