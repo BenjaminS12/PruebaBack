@@ -36,19 +36,25 @@ def signup(request):
         
 def signin(request):
     if request.method == 'GET':
-        return render(request, 'templates/registro/signin.html',{
+        return render(request, 'registro/signin.html',{
             'form': AuthenticationForm
         })
     else:
-        user = authenticate(
-            request, username=request.POST['username'], password=request.POST
-            ['password'])
-        if user is None:
-            return render(request, 'templates/registro/signin.html', {
-                'form': AuthenticationForm,
-                'error': 'Usuario o Contraseña incorrectos'
-            })
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        if username and password:
+            user = authenticate(request, username = username, password = password)
+            if user is None:
+                return render(request, 'registro/signin.html', {
+                    'form': AuthenticationForm,
+                    'error': 'Usuario o Contraseña incorrectos'
+                })
+            else:
+                login(request, user)
+                return redirect('index')
         else:
-            login(request, user)
-            return redirect('index')
+            return render(request, 'registro/signin.html',{
+                'form': AuthenticationForm,
+                'error': 'Debe completar todos los campos',
+            })
         
