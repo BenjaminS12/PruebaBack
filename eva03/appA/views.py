@@ -5,8 +5,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 
 
-def index(request):
-    return render(request, 'index.html')
+def landing_page(request):
+    return render(request, 'landing/page.html')
 
 def signup(request):
     
