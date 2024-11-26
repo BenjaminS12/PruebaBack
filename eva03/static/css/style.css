@@ -196,25 +196,24 @@ span, i, button, a{
 /* footer css design
 ===================================*/
 
-footer{
+footer {
     width: 100%;
-    text-align: right;
+    text-align: center;
 }
 
-footer p{
+footer p {
     font-size: 14px;
     font-weight: 400;
     color: #fff;
-    opacity: 0.4;
     margin-top: 3px;
     letter-spacing: 0.12px;
+    opacity: 1; 
 }
 
-footer p a{
-    color: #fff;
-    text-decoration: underline;
+footer p a, footer ul.nav li a {
+    color: #fff !important;
+    text-decoration: none;
 }
-
 
 
 /* footer css design

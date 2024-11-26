@@ -5,4 +5,6 @@ urlpatterns = [
     path('', views.landing_page, name='landing_page'),
     path('signin/', views.signin, name='signin'),
     path('signup/', views.signup, name='signup'),
+    
+    
 ]
